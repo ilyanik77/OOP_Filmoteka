@@ -1,6 +1,5 @@
 package model;
 
-//import java.io.*;
 import java.util.ArrayList;
 
 public class ListMovies {
@@ -11,10 +10,6 @@ public class ListMovies {
         return listMovies;
     }
 
-    //public void writeMovieInFile(Movie movie, String fileName ){
-    //    FileWriter writer = new FileWriter("listMovies.csv");
-
-
-    //} 
+    
 
 }
