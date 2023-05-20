@@ -1,0 +1,71 @@
+package view;
+
+public class InputData {
+
+    public String inputName() {
+
+        System.out.println("Введите имя: ");
+        Scanner sc = new Scanner(System.in);
+        String name =  sc.nextLine();
+        sc.close();
+
+        return name;
+    }
+
+    public String inputRole() {
+
+        System.out.println("Введите роль: ");
+        Scanner sc = new Scanner(System.in);
+        String role = sc.nextLine();
+
+        return role;
+    }
+
+    public Double inputBalance() {
+
+        System.out.println("Ваш баланс: ");
+        Scanner sc = new Scanner(System.in);
+        Double balance = Double.parseDouble(sc.nextLine());
+
+        return balance;
+    }
+
+    public Integer countFilms() {
+
+        System.out.println("Кол-во фильмов: ");
+        Scanner sc = new Scanner(System.in);
+        Integer countFilms = Integer.parseInt(sc.nextLine());
+
+        return countFilms;
+    }
+
+    public String inputFilmName() {
+
+        System.out.println("Введите название фильма: ");
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+
+        return name;
+    }
+
+    public String inputYearRelease() {
+
+        System.out.println("Введите год релиза: ");
+        Scanner sc = new Scanner(System.in);
+        String yearRelease = sc.nextLine();
+
+        return yearRelease;
+    }
+
+    public Double inputPriceFilm() {
+
+        System.out.println("Цена фильма: ");
+        Scanner sc = new Scanner(System.in);
+        Double priceFilm = Double.parseDouble(sc.nextLine());
+
+        return priceFilm;
+    }
+
+
+
+}

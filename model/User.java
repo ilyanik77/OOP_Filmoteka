@@ -6,9 +6,9 @@ public class User {
     private String name;
     private String role;
     private Double balance;
-    private int countFilms;
+    private Integer countFilms;
 
-    public User(String name, String role, Double balance, int countFilms) {
+    public User(String name, String role, Double balance, Integer countFilms) {
         this.name = name;
         this.role = role;
         this.balance = balance;
@@ -39,12 +39,17 @@ public class User {
         this.balance = balance;
     }
 
-    public int getCountFilms() {
+    public Integer getCountFilms() {
         return countFilms;
     }
 
-    public void setCountFilms(int countFilms) {
+    public void setCountFilms(Integer countFilms) {
         this.countFilms = countFilms;
+    }
+
+    public String toString() {
+        return "Пользователь :" + name + "; Амплуа :" + role + "; Ваш баланс :" + balance + "; Кол-во фильмов :" + countFilms;
+
     }
 
 }

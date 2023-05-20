@@ -4,7 +4,7 @@ public class Movie {
     private String name;
     private String yearRelease;
     private Double priceFilm;
-
+    
     public Movie(String name, String yearRelease, Double priceFilm) {
         this.name = name;
         this.yearRelease = yearRelease;
@@ -34,4 +34,10 @@ public class Movie {
     public void setPriceFilm(Double priceFilm) {
         this.priceFilm = priceFilm;
     }
+
+    public String toString() {
+        return "Название фильма :" + name + "; Год релиза :" + yearRelease + "; Цена фильма :" + priceFilm;
+
+    }
+    
 }
