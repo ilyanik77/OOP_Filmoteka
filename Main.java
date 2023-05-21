@@ -1,8 +1,10 @@
+//import model.ListMovies;
+//import model.ListUsers;
+//import model.ListUsers;
 import model.ListMovies;
 import model.ListUsers;
-//import model.ListUsers;
-import model.Movie;
-//import model.User;
+//import model.Movie;
+import model.User;
 
 
 public class Main {
@@ -17,8 +19,8 @@ public class Main {
         //listMovies.addMovieInList();
         //System.out.println(listMovies.printListMovies());
         //
-        
-        ListUsers listUsers = new ListUsers("aaaaa");
+        ListMovies listMovies = new ListMovies("Список фильмов");
+        ListUsers listUsers = new ListUsers("Список пользователей");
         //User user1 = new User("Ilya", "admin", 100.2, 0);
         //User user2 = new User("Kolya", "user", 80.4, 0);
         //User user3 = new User("Petr", "user", 65.5, 0);
@@ -32,8 +34,11 @@ public class Main {
     
         //listMovies.addMovieInList();
         //System.out.println(listMovies.printListMovies());
-        listUsers.addUserInList();
-        System.out.println(listUsers.printListUsers());
+        //listUsers.addUserInList(User.getNewUser());
+        //System.out.println(listUsers.printListUsers());
+        //listUsers.writeUsersInFile();
+        //System.out.println(listUsers.printListUsers());
+        listMovies.writeMoviesInFile();
         
     }
 

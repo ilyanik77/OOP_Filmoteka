@@ -1,20 +1,21 @@
 package view;
 
+import java.util.Scanner;
+
 public class InputData {
 
     public String inputName() {
 
-        System.out.println("Введите имя: ");
+        System.out.print("Введите имя: ");
         Scanner sc = new Scanner(System.in);
         String name =  sc.nextLine();
-        sc.close();
-
+        
         return name;
     }
 
     public String inputRole() {
 
-        System.out.println("Введите роль: ");
+        System.out.print("Введите роль: ");
         Scanner sc = new Scanner(System.in);
         String role = sc.nextLine();
 
@@ -23,7 +24,7 @@ public class InputData {
 
     public Double inputBalance() {
 
-        System.out.println("Ваш баланс: ");
+        System.out.print("Ваш баланс: ");
         Scanner sc = new Scanner(System.in);
         Double balance = Double.parseDouble(sc.nextLine());
 
@@ -32,7 +33,7 @@ public class InputData {
 
     public Integer countFilms() {
 
-        System.out.println("Кол-во фильмов: ");
+        System.out.print("Кол-во фильмов: ");
         Scanner sc = new Scanner(System.in);
         Integer countFilms = Integer.parseInt(sc.nextLine());
 
@@ -41,7 +42,7 @@ public class InputData {
 
     public String inputFilmName() {
 
-        System.out.println("Введите название фильма: ");
+        System.out.print("Введите название фильма: ");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
 
@@ -50,7 +51,7 @@ public class InputData {
 
     public String inputYearRelease() {
 
-        System.out.println("Введите год релиза: ");
+        System.out.print("Введите год релиза: ");
         Scanner sc = new Scanner(System.in);
         String yearRelease = sc.nextLine();
 
@@ -59,13 +60,11 @@ public class InputData {
 
     public Double inputPriceFilm() {
 
-        System.out.println("Цена фильма: ");
+        System.out.print("Цена фильма: ");
         Scanner sc = new Scanner(System.in);
         Double priceFilm = Double.parseDouble(sc.nextLine());
 
         return priceFilm;
     }
-
-
-
+    
 }

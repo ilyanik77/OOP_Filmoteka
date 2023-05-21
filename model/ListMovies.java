@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ListMovies {
 
@@ -27,32 +26,26 @@ public class ListMovies {
         return sb.toString();
     }
 
-    public void addMovieInList() {
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите название фильма: ");
-        String name = sc.nextLine();
-        System.out.println("Введите год релиза: ");
-        String yearRelease = sc.nextLine();
-        
-        System.out.println("Цена фильма: ");  
-        Double priceFilm = Double.parseDouble(sc.nextLine());
-        
-        movies.add(new Movie(name, yearRelease, priceFilm));
-        sc.close();
+    public void addMovieInList(Movie movie) {
+
+        movies.add(movie); 
+
     }
 
     public void writeMoviesInFile() {
-        
+
+        Movie movie = Movie.getNewMovie();
         File file = new File("dbMovies.txt");
 
-        try (FileWriter fw = new FileWriter(file);
+        try (FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw))
         {
-            for (Movie movie : movies) {
-                bw.write(movie.toString());
-                System.out.println("Запись завершена!");
-            }
+            
+            bw.write(movie.toString());
+            System.out.println("Запись завершена!");
+
+                bw.close();
+            
         }
         catch (IOException e) {
             e.printStackTrace();

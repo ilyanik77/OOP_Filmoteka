@@ -1,5 +1,7 @@
 package model;
 
+import view.InputData;
+
 public class Movie {
     private String name;
     private String yearRelease;
@@ -36,7 +38,17 @@ public class Movie {
     }
 
     public String toString() {
-        return "Название фильма :" + name + "; Год релиза :" + yearRelease + "; Цена фильма :" + priceFilm;
+        return "Название фильма :" + name + "; Год релиза :" + yearRelease + "; Цена фильма :" + priceFilm + "\n";
+
+    }
+
+    public static Movie getNewMovie() {
+
+        String name =  new InputData().inputFilmName();
+        String yearRelease =  new InputData().inputYearRelease();
+        Double priceFilm = new InputData().inputPriceFilm();
+        
+        return new Movie(name, yearRelease, priceFilm);
 
     }
     

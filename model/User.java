@@ -1,5 +1,6 @@
 package model;
 
+import view.InputData;
 
 public class User {
 
@@ -48,7 +49,18 @@ public class User {
     }
 
     public String toString() {
-        return "Пользователь :" + name + "; Амплуа :" + role + "; Ваш баланс :" + balance + "; Кол-во фильмов :" + countFilms;
+        return "Пользователь :" + name + "; Амплуа :" + role + "; Ваш баланс :" + balance + "; Кол-во фильмов :" + countFilms + "\n";
+
+    }
+
+    public static User getNewUser() {
+
+        String name =  new InputData().inputName();
+        String role =  new InputData().inputRole();
+        Integer countFilms = new InputData().countFilms();
+        Double balance = new InputData().inputBalance();
+        
+        return new User(name, role, balance, countFilms);
 
     }
 
