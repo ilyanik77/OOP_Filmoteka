@@ -7,10 +7,13 @@ public class Movie {
     private String yearRelease;
     private Double priceFilm;
     
-    public Movie(String name, String yearRelease, Double priceFilm) {
+    public Movie(String name, String yearRelease, double d) {
         this.name = name;
         this.yearRelease = yearRelease;
-        this.priceFilm = priceFilm;
+        this.priceFilm = d;
+    }
+
+    public Movie() {
     }
 
     public String getName() {
@@ -38,7 +41,7 @@ public class Movie {
     }
 
     public String toString() {
-        return "Название фильма :" + name + "; Год релиза :" + yearRelease + "; Цена фильма :" + priceFilm + "\n";
+        return  name + " ; " + yearRelease + " ; " + priceFilm + "\n";
 
     }
 

@@ -1,41 +1,36 @@
 package model;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+
+import view.InputData;
+
 
 public class ListMovies {
 
     private String name;
-    public ArrayList<Movie> movies = new ArrayList<>();
+    private String filePath;
 
-    public ListMovies(String name) {
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public ListMovies(String name, String filePath) {
         this.name = name;
+        this.filePath = filePath;
     }
     
     public String getName(){
         return name;
     }
 
-    public String printListMovies() {
-        StringBuilder sb = new StringBuilder();
-        for (Movie movie : movies) {
-            sb.append(movie).append("\n");
-        }
-        return sb.toString();
-    }
-
-    public void addMovieInList(Movie movie) {
-
-        movies.add(movie); 
-
-    }
-
-    public void writeMoviesInFile() {
+    public void writeMovieInFile() {
 
         Movie movie = Movie.getNewMovie();
-        File file = new File("dbMovies.txt");
+        File file = new File(filePath);
 
         try (FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw))
@@ -51,6 +46,64 @@ public class ListMovies {
             e.printStackTrace();
         }
 
+    }
+
+    public void printDbMovies() throws IOException {
+
+        File file = new File(filePath);
+        FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+        String line = null; 
+            
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+
+        }
+          
+        br.close();
+    }
+
+    public void deleteMovieByName() {
+        
+        String name =  new InputData().inputFilmName();
+
+        File file = new File(filePath);
+        
+        try {
+            // создаем временный файл
+            File tempFile = new File("temp.csv");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+            // читаем исходный файл
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                
+                String[] x = line.split(";");
+                if (!x[0].equals(name)) {
+
+                    writer.write(line + "\r\n");
+
+                }
+                
+            }
+            System.out.println("Фильм удален.");
+            // закрываем ридер и писатель
+            reader.close();
+            writer.close();
+
+            file.delete();
+            tempFile.renameTo(file);
+        
+        } catch (IOException e) {
+        
+            e.printStackTrace();
+        }
+        
+        
+
+        
     }
     
 }

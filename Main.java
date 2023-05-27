@@ -1,15 +1,15 @@
-//import model.ListMovies;
-//import model.ListUsers;
-//import model.ListUsers;
+
 import model.ListMovies;
-import model.ListUsers;
 //import model.Movie;
-import model.User;
+//import model.User;
+import java.io.IOException;
+
+//import model.ListUsers;
 
 
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //ListMovies listMovies = new ListMovies("bbb");
         //Movie movie1 = new Movie("Aaaaa", "2000", 8.5);
@@ -18,27 +18,27 @@ public class Main {
         //listMovies.movies.add(movie2);
         //listMovies.addMovieInList();
         //System.out.println(listMovies.printListMovies());
-        //
-        ListMovies listMovies = new ListMovies("Список фильмов");
-        ListUsers listUsers = new ListUsers("Список пользователей");
-        //User user1 = new User("Ilya", "admin", 100.2, 0);
-        //User user2 = new User("Kolya", "user", 80.4, 0);
-        //User user3 = new User("Petr", "user", 65.5, 0);
-        //listUsers.users.add(user1);
-        //listUsers.users.add(user2);
-        //listUsers.users.add(user3);
-        //System.out.println(listUsers.printListUsers());
-        //listUsers.addUserInList(user1);
-        //System.out.println(listUsers.printListUsers());
-        //listUsers.writeListUsersToFile(users, "ListUsers.txt" );
+        
+        ListMovies listMovies = new ListMovies("Список фильмов", "dbMovies.csv");
+        //ListUsers listUsers = new ListUsers("Список пользователей", "dbUsers.csv");
+        
     
         //listMovies.addMovieInList();
         //System.out.println(listMovies.printListMovies());
         //listUsers.addUserInList(User.getNewUser());
         //System.out.println(listUsers.printListUsers());
-        //listUsers.writeUsersInFile();
-        //System.out.println(listUsers.printListUsers());
-        listMovies.writeMoviesInFile();
+        //listUsers.writeUserInFile();
+        //System.out.println(listUsers.printDbUsers());
+        listMovies.writeMovieInFile();
+        //listUsers.writeUserInFile();
+        //listMovies.printDbMovies();
+        //listUsers.printDbUsers();
+    
+        //listMovies.deleteMovieByName();
+        listMovies.printDbMovies();
+        //listUsers.deleteUserByName();
+        //listUsers.printDbUsers();
+        
         
     }
 

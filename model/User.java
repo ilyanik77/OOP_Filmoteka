@@ -49,7 +49,7 @@ public class User {
     }
 
     public String toString() {
-        return "Пользователь :" + name + "; Амплуа :" + role + "; Ваш баланс :" + balance + "; Кол-во фильмов :" + countFilms + "\n";
+        return name + " ; " + role + " ; " + balance + " ; " + countFilms + "\n";
 
     }
 
@@ -63,5 +63,7 @@ public class User {
         return new User(name, role, balance, countFilms);
 
     }
+
+    
 
 }

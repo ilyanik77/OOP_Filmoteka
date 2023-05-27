@@ -1,9 +1,12 @@
 package model;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+
+import view.InputData;
 
 
 
@@ -11,36 +14,25 @@ import java.util.ArrayList;
 public class ListUsers {
 
     private String name;
-    public ArrayList<User> users = new ArrayList<>();
+    private String filePath;
+    
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
 
-
-    public ListUsers(String name) {
+    public ListUsers(String name, String filePath) {
         this.name = name;
+        this.filePath = filePath;
     } 
 
     public String getName() {
         return name;
     }
 
-    public String printListUsers() {
-        StringBuilder sb = new StringBuilder();
-        for (User user : users) {
-            sb.append(user).append("\n");
-        }
-        return sb.toString();
-    }
-
-
-    public void addUserInList(User user) {
-        
-        users.add(user);
-        
-    }
-
-    public void writeUsersInFile() {
+    public void writeUserInFile() {
 
         User user = User.getNewUser();
-        File file = new File("dbUsers.txt");
+        File file = new File("dbUsers.csv");
 
         try (FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw))
@@ -57,7 +49,62 @@ public class ListUsers {
 
     }
     
+    public void printDbUsers() throws IOException {
 
+        File file = new File("dbUsers.csv");
+        FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+        String line = null; 
+            
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+
+        }
+          
+        br.close();
+    }
+
+    public void deleteUserByName() {
+        
+        String name =  new InputData().inputName();
+
+        File file = new File(filePath);
+        
+        try {
+            
+            File tempFile = new File("temp.csv");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+            BufferedReader reader = new BufferedReader(new FileReader(filePath));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                
+                String[] x = line.split(";");
+                if (!x[0].equals(name)) {
+
+                    writer.write(line + "\r\n");
+
+                }
+                
+            }
+            System.out.println("Пользователь удален.");
+            
+            reader.close();
+            writer.close();
+
+            file.delete();
+            tempFile.renameTo(file);
+        
+        } catch (IOException e) {
+        
+            e.printStackTrace();
+        }
+        
+        
+
+        
+    }
 
 
     
