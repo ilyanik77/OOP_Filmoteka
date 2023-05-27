@@ -4,7 +4,7 @@ import model.ListMovies;
 //import model.User;
 import java.io.IOException;
 
-//import model.ListUsers;
+import model.ListUsers;
 
 
 public class Main {
@@ -20,7 +20,7 @@ public class Main {
         //System.out.println(listMovies.printListMovies());
         
         ListMovies listMovies = new ListMovies("Список фильмов", "dbMovies.csv");
-        //ListUsers listUsers = new ListUsers("Список пользователей", "dbUsers.csv");
+        ListUsers listUsers = new ListUsers("Список пользователей", "dbUsers.csv");
         
     
         //listMovies.addMovieInList();
@@ -29,13 +29,13 @@ public class Main {
         //System.out.println(listUsers.printListUsers());
         //listUsers.writeUserInFile();
         //System.out.println(listUsers.printDbUsers());
-        listMovies.writeMovieInFile();
-        //listUsers.writeUserInFile();
+        //listMovies.writeMovieInFile();
+        listUsers.writeUserInFile();
         //listMovies.printDbMovies();
-        //listUsers.printDbUsers();
+        listUsers.printDbUsers();
     
         //listMovies.deleteMovieByName();
-        listMovies.printDbMovies();
+        //listMovies.printDbMovies();
         //listUsers.deleteUserByName();
         //listUsers.printDbUsers();
         

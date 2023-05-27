@@ -3,9 +3,9 @@ package model;
 import view.InputData;
 
 public class Movie {
-    private String name;
-    private String yearRelease;
-    private Double priceFilm;
+    public String name;
+    public String yearRelease;
+    public Double priceFilm;
     
     public Movie(String name, String yearRelease, double d) {
         this.name = name;

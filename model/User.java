@@ -4,10 +4,10 @@ import view.InputData;
 
 public class User {
 
-    private String name;
-    private String role;
-    private Double balance;
-    private Integer countFilms;
+    public String name;
+    public String role;
+    public Double balance;
+    public Integer countFilms;
 
     public User(String name, String role, Double balance, Integer countFilms) {
         this.name = name;
