@@ -1,16 +1,23 @@
 package view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Authorize {
 
-    public String authorize() {
+    Scanner sc = new Scanner(System.in);
 
-        System.out.println("Введите имя: ");
-        Scanner sc = new Scanner(System.in);
-        String name =  sc.nextLine();
-        sc.close();
+    public String authorize() throws IOException {
 
+        String name = "";
+        try {
+            System.out.println("Добро пожаловать!");
+            System.out.print("Введите Ваше имя: ");
+            name = sc.nextLine();
+        } catch (Exception e) {
+            System.out.println("Некоректный ввод данных.");
+        } 
         return name;
+
     }
 }

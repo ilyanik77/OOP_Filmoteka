@@ -13,7 +13,7 @@ public class InputData {
             System.out.print("Введите имя пользователя: ");
             name = sc.nextLine();
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return name;
         
@@ -26,7 +26,7 @@ public class InputData {
             System.out.print("Введите роль: ");
             role = sc.nextLine();
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return role;
         
@@ -40,7 +40,7 @@ public class InputData {
             System.out.print("Баланс пользователя: ");
             balance = Double.parseDouble(sc.nextLine());
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return balance;
         
@@ -53,7 +53,7 @@ public class InputData {
             System.out.print("Кол-во фильмов: ");
             countFilms = Integer.parseInt(sc.nextLine());
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return countFilms;
         
@@ -66,7 +66,7 @@ public class InputData {
             System.out.print("Введите название фильма: ");
             name = sc.nextLine();
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return name;
 
@@ -79,7 +79,7 @@ public class InputData {
             System.out.print("Введите год релиза: ");
             yearRelease = sc.nextLine();
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return yearRelease;
 
@@ -92,7 +92,7 @@ public class InputData {
             System.out.print("Цена фильма: ");
             priceFilm = Double.parseDouble(sc.nextLine());
         } catch (Exception e) {
-            System.out.println("");
+            System.out.println("Некоректный ввод данных.");
         } 
         return priceFilm;
 

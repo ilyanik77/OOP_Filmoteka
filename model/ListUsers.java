@@ -32,7 +32,7 @@ public class ListUsers {
     public void writeUserInFile() {
 
         User user = User.getNewUser();
-        File file = new File("dbUsers.csv");
+        File file = new File(filePath);
 
         try (FileWriter fw = new FileWriter(file, true);
             BufferedWriter bw = new BufferedWriter(fw))
@@ -51,7 +51,7 @@ public class ListUsers {
     
     public void printDbUsers() throws IOException {
 
-        File file = new File("dbUsers.csv");
+        File file = new File(filePath);
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line = null; 

@@ -41,7 +41,7 @@ public class Movie {
     }
 
     public String toString() {
-        return  name + " ; " + yearRelease + " ; " + priceFilm + "\n";
+        return  name + ";" + yearRelease + ";" + priceFilm + "\n";
 
     }
 

@@ -49,7 +49,7 @@ public class User {
     }
 
     public String toString() {
-        return name + " ; " + role + " ; " + balance + " ; " + countFilms + "\n";
+        return name + ";" + role + ";" + balance + ";" + countFilms + "\n";
 
     }
 

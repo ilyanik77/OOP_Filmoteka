@@ -1,26 +1,26 @@
 
-import model.ListMovies;
+//import model.ListMovies;
 //import model.Movie;
 //import model.User;
 import java.io.IOException;
+//import view.Authorize;
+//import view.AdminView;
+//import view.UserView;
+//import model.ListUsers;
 
-import model.ListUsers;
+import services.App;
 
 
 public class Main {
     
     public static void main(String[] args) throws IOException {
 
-        //ListMovies listMovies = new ListMovies("bbb");
-        //Movie movie1 = new Movie("Aaaaa", "2000", 8.5);
-        //Movie movie2 = new Movie("Bbbbb", "1995", 9.0);
-        //listMovies.movies.add(movie1);
-        //listMovies.movies.add(movie2);
-        //listMovies.addMovieInList();
-        //System.out.println(listMovies.printListMovies());
-        
-        ListMovies listMovies = new ListMovies("Список фильмов", "dbMovies.csv");
-        ListUsers listUsers = new ListUsers("Список пользователей", "dbUsers.csv");
+        //ListMovies listMovies = new ListMovies("Список фильмов", "dbMovies.csv");
+        //ListUsers listUsers = new ListUsers("Список пользователей", "dbUsers.csv");
+        //AdminView adminView = new AdminView();
+        //UserView userView = new UserView();
+        //Authorize authorize = new Authorize();
+        App app = new App();
         
     
         //listMovies.addMovieInList();
@@ -30,16 +30,23 @@ public class Main {
         //listUsers.writeUserInFile();
         //System.out.println(listUsers.printDbUsers());
         //listMovies.writeMovieInFile();
-        listUsers.writeUserInFile();
+        //listUsers.writeUserInFile();
         //listMovies.printDbMovies();
-        listUsers.printDbUsers();
+        //listUsers.printDbUsers();
     
         //listMovies.deleteMovieByName();
         //listMovies.printDbMovies();
         //listUsers.deleteUserByName();
         //listUsers.printDbUsers();
-        
-        
+        //System.out.println(adminView.showAdminMenu());
+        //System.out.println(userView.showUserMenu());
+        //System.out.println(authorize.authorize());
+        //String name = authorize.authorize();
+        //System.out.println(app.getNumMenu());
+        app.showMenu();
+        //app.checkUser();
+
+
     }
 
 

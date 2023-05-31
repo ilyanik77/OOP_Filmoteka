@@ -3,16 +3,23 @@ package view;
 import java.util.Scanner;
 
 public class UserView {
+
+    Scanner sc = new Scanner(System.in);
     
-    public int showUserMenu(){
+    public void showUserMenu(){
         System.out.println("1 - Арендовать фильм");
         System.out.println("2 - Вернуть фильм");
 
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        sc.close();
+        //Integer num = 0;
         
-        return num;
+        //try {
+        //    System.out.println("Введите число: ");
+        //    num = sc.nextInt();
+        //} catch (Exception e) {
+        //    System.out.println("Некоректный ввод данных.");
+        //}
+        //return num;
+        
     }
 
 
