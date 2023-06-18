@@ -1,5 +1,6 @@
 package view;
 
+//import java.nio.charset.Charset;
 import java.util.Scanner;
 
 public class InputData {
@@ -96,6 +97,18 @@ public class InputData {
         } 
         return priceFilm;
 
+    }
+
+    public Integer choiceItem () {
+
+        Integer res = 0;
+        try {
+            System.out.print("Выберите пункт: ");
+            res = Integer.parseInt(sc.nextLine());
+        } catch (Exception e) {
+            System.out.println("Некоректный ввод данных.");
+        } 
+        return res;
     }
 
     

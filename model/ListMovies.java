@@ -70,11 +70,10 @@ public class ListMovies {
         File file = new File(filePath);
         
         try {
-            // создаем временный файл
+            
             File tempFile = new File("temp.csv");
             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
-            // читаем исходный файл
             BufferedReader reader = new BufferedReader(new FileReader(filePath));
             String line;
 
@@ -89,7 +88,7 @@ public class ListMovies {
                 
             }
             System.out.println("Фильм удален.");
-            // закрываем ридер и писатель
+            
             reader.close();
             writer.close();
 
