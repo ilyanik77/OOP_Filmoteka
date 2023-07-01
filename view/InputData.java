@@ -1,6 +1,6 @@
 package view;
 
-//import java.nio.charset.Charset;
+
 import java.util.Scanner;
 
 public class InputData {

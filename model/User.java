@@ -64,6 +64,15 @@ public class User {
 
     }
 
+    public void rentFilm() {
+        System.out.println("Хочу арендовать фильм");
+    }
+
+
+    public void returnFilm() {
+        System.out.println("Хочу вернуть фильм");
+    }
+
     
 
 }
